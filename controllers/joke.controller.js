@@ -7,7 +7,7 @@ module.exports.getAllJokes = (req,res) => {
 }
 
 module.exports.getSingleJoke = (req,res) => { // needs to target id
-    Joke.findOne({_id: req.params.id})
+    Joke.find({_id: req.params.id})
         .then(singleJokes => res.json({joke: singleJokes}))
         .catch(err => res.json({err}))
 }
